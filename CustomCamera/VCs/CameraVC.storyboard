@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CameraVC-->
+        <scene sceneID="lDi-VS-1xr">
+            <objects>
+                <viewController storyboardIdentifier="CameraID" id="UYs-tC-Muv" customClass="CameraVC" customModule="CustomCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40T-JO-vZf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g64-YZ-hNt">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mEz-QP-SlI">
+                                <rect key="frame" x="8" y="20" width="398" height="2"/>
+                            </progressView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddb-K2-mGe">
+                                <rect key="frame" x="0.0" y="661" width="414" height="75"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Ss-XN-KO1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="DRC-Wr-jHx"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E45-RZ-gQo">
+                                <rect key="frame" x="10" y="25" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6e7-iV-4tV"/>
+                                    <constraint firstAttribute="width" constant="44" id="iWk-It-gQh"/>
+                                </constraints>
+                                <state key="normal" image="icons8-flash_off"/>
+                                <connections>
+                                    <action selector="toggleFlash:" destination="UYs-tC-Muv" eventType="touchUpInside" id="WK4-0Q-rvu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-image" translatesAutoresizingMaskIntoConstraints="NO" id="I60-dW-1cJ">
+                                <rect key="frame" x="20" y="672" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="R5X-0o-RvG"/>
+                                    <constraint firstAttribute="width" constant="44" id="pT0-VM-fVP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQC-3q-XEY">
+                                <rect key="frame" x="192" y="591" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7gE-ex-oCv"/>
+                                    <constraint firstAttribute="height" constant="30" id="FhV-Js-diH"/>
+                                </constraints>
+                                <state key="normal" image="icons8-camera"/>
+                                <connections>
+                                    <action selector="didTakePhoto:" destination="UYs-tC-Muv" eventType="touchUpInside" id="cHo-ga-Gb5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IA-2Q-zhN">
+                                <rect key="frame" x="182" y="665" width="50" height="50"/>
+                                <state key="normal" image="icons8-record"/>
+                                <connections>
+                                    <action selector="shootDown:" destination="UYs-tC-Muv" eventType="touchDown" id="ntG-7F-620"/>
+                                    <action selector="shootTouchCancel:" destination="UYs-tC-Muv" eventType="touchCancel" id="wmy-v3-VAd"/>
+                                    <action selector="shootTouchUpInside:" destination="UYs-tC-Muv" eventType="touchUpInside" id="KQa-8T-hEm"/>
+                                    <action selector="shootTouchUpOutside:" destination="UYs-tC-Muv" eventType="touchUpOutside" id="P91-ai-o4v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNe-Zu-JIr">
+                                <rect key="frame" x="354" y="676" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kYq-Sv-7lk"/>
+                                    <constraint firstAttribute="width" constant="40" id="w7K-Ic-ERv"/>
+                                </constraints>
+                                <state key="normal" image="icons8-switch_camera"/>
+                                <connections>
+                                    <action selector="toggleButtonPressed:" destination="UYs-tC-Muv" eventType="touchUpInside" id="TZa-5G-kxP"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XoA-vk-1v5">
+                                <rect key="frame" x="197" y="567" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUa-xr-XVb">
+                                <rect key="frame" x="380" y="32" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="PIE-nJ-vNe"/>
+                                    <constraint firstAttribute="width" constant="26" id="zc4-NL-R5c"/>
+                                </constraints>
+                                <state key="normal" image="icons8-cancel"/>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="UYs-tC-Muv" eventType="touchUpInside" id="nuE-ej-xPg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ddb-K2-mGe" firstAttribute="bottom" secondItem="scQ-uq-eiK" secondAttribute="bottom" id="0Qa-XB-9Jx"/>
+                            <constraint firstItem="scQ-uq-eiK" firstAttribute="trailing" secondItem="xNe-Zu-JIr" secondAttribute="trailing" constant="20" id="2yw-bz-70Y"/>
+                            <constraint firstItem="g64-YZ-hNt" firstAttribute="trailing" secondItem="scQ-uq-eiK" secondAttribute="trailing" id="32B-pz-Xze"/>
+                            <constraint firstItem="scQ-uq-eiK" firstAttribute="bottom" secondItem="6IA-2Q-zhN" secondAttribute="bottom" constant="21" id="3WF-TM-xnI"/>
+                            <constraint firstItem="scQ-uq-eiK" firstAttribute="bottom" secondItem="xNe-Zu-JIr" secondAttribute="bottom" constant="20" id="7Fu-7O-ZRg"/>
+                            <constraint firstItem="E45-RZ-gQo" firstAttribute="leading" secondItem="scQ-uq-eiK" secondAttribute="leading" constant="10" id="7tq-zd-Czb"/>
+                            <constraint firstItem="g64-YZ-hNt" firstAttribute="bottom" secondItem="scQ-uq-eiK" secondAttribute="bottom" id="Edl-wz-L26"/>
+                            <constraint firstItem="scQ-uq-eiK" firstAttribute="bottom" secondItem="I60-dW-1cJ" secondAttribute="bottom" constant="20" id="GL0-1m-4vF"/>
+                            <constraint firstItem="ddb-K2-mGe" firstAttribute="leading" secondItem="scQ-uq-eiK" secondAttribute="leading" id="Jg8-Zb-kvP"/>
+                            <constraint firstItem="mEz-QP-SlI" firstAttribute="leading" secondItem="40T-JO-vZf" secondAttribute="leading" constant="8" id="Kpf-gL-pwN"/>
+                            <constraint firstItem="g64-YZ-hNt" firstAttribute="leading" secondItem="scQ-uq-eiK" secondAttribute="leading" id="QHE-JK-kBC"/>
+                            <constraint firstItem="scQ-uq-eiK" firstAttribute="trailing" secondItem="tUa-xr-XVb" secondAttribute="trailing" constant="8" id="Tqc-Lx-Xsa"/>
+                            <constraint firstItem="mEz-QP-SlI" firstAttribute="top" secondItem="scQ-uq-eiK" secondAttribute="top" id="V3z-fE-aMu"/>
+                            <constraint firstItem="tUa-xr-XVb" firstAttribute="top" secondItem="mEz-QP-SlI" secondAttribute="bottom" constant="10" id="ZIg-kJ-sXj"/>
+                            <constraint firstItem="6IA-2Q-zhN" firstAttribute="top" secondItem="zQC-3q-XEY" secondAttribute="bottom" constant="44" id="dqa-KW-Kmt"/>
+                            <constraint firstItem="zQC-3q-XEY" firstAttribute="centerX" secondItem="6IA-2Q-zhN" secondAttribute="centerX" id="nqG-zc-ofF"/>
+                            <constraint firstItem="g64-YZ-hNt" firstAttribute="top" secondItem="40T-JO-vZf" secondAttribute="top" id="ppa-0b-n2f"/>
+                            <constraint firstAttribute="trailing" secondItem="mEz-QP-SlI" secondAttribute="trailing" constant="8" id="rPI-ru-oYM"/>
+                            <constraint firstItem="I60-dW-1cJ" firstAttribute="leading" secondItem="scQ-uq-eiK" secondAttribute="leading" constant="20" id="tcf-jQ-hSu"/>
+                            <constraint firstItem="6IA-2Q-zhN" firstAttribute="centerX" secondItem="scQ-uq-eiK" secondAttribute="centerX" id="tdE-xg-VFJ"/>
+                            <constraint firstItem="ddb-K2-mGe" firstAttribute="trailing" secondItem="scQ-uq-eiK" secondAttribute="trailing" id="wCs-o1-b5A"/>
+                            <constraint firstItem="E45-RZ-gQo" firstAttribute="top" secondItem="mEz-QP-SlI" secondAttribute="bottom" constant="3" id="xXN-b4-1NQ"/>
+                            <constraint firstItem="zQC-3q-XEY" firstAttribute="centerX" secondItem="scQ-uq-eiK" secondAttribute="centerX" id="ypT-Dq-2Jf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="scQ-uq-eiK"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="g64-YZ-hNt" id="MmP-Rk-3wQ"/>
+                        <outlet property="closeButton" destination="tUa-xr-XVb" id="U3V-Vh-woe"/>
+                        <outlet property="flashButton" destination="E45-RZ-gQo" id="GGm-to-T2D"/>
+                        <outlet property="indicatorView" destination="XoA-vk-1v5" id="Tj3-eo-zaO"/>
+                        <outlet property="progressView" destination="mEz-QP-SlI" id="TJy-Ej-cZU"/>
+                        <outlet property="shootButton" destination="6IA-2Q-zhN" id="lL4-Fh-sd1"/>
+                        <outlet property="takePhotoButton" destination="zQC-3q-XEY" id="2fX-fe-Iol"/>
+                        <outlet property="takenImage" destination="I60-dW-1cJ" id="Zkv-w8-53D"/>
+                        <outlet property="toggleButton" destination="xNe-Zu-JIr" id="Wxc-Tt-ZSi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zY4-sQ-rLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="452.17391304347831" y="40.760869565217398"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-camera" width="120" height="120"/>
+        <image name="icons8-cancel" width="26" height="26"/>
+        <image name="icons8-flash_off" width="32" height="32"/>
+        <image name="icons8-image" width="40" height="40"/>
+        <image name="icons8-record" width="50" height="50"/>
+        <image name="icons8-switch_camera" width="40" height="40"/>
+    </resources>
+</document>
