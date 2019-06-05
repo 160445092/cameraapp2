@@ -289,7 +289,6 @@ class CameraVC: UIViewController, AVCaptureFileOutputRecordingDelegate, UIGestur
     //MARK: - Camera initialization
     fileprivate func initCamera() {
         do {
-            
             try frontCaptureDeviceInput = AVCaptureDeviceInput(device: cameraWithPosition(position : .front)!)
         } catch {
             print(error.localizedDescription)
